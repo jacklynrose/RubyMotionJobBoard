@@ -1,0 +1,11 @@
+<h2>Job Openings</h2>
+
+<% @jobs.each do |job| %>
+  <h3><%= job.title %></h3>
+  <p><strong>Job description</strong></p>
+  <blockquote><%= job.description %></blockquote>
+  <p>Email - <%= job.email %>, Contract Type - <%= job.contract_type %>, Pay - <%= job.pay %></p>
+  <p><%= link_to 'Show', job %> | <%= link_to 'Edit', edit_job_path(job) %> | <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<% end %>
+
+<%= link_to 'New Job', new_job_path %>
